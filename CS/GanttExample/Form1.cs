@@ -46,7 +46,6 @@ namespace GanttExample {
             // TODO: This line of code loads data into the 'gantTestDataSet.Appointments' table. You can move, or remove it, as needed.
             this.appointmentsTableAdapter.Fill(this.gantTestDataSet.Appointments);
             #region #CommitIdToDataSource
-            schedulerStorage1.Appointments.CommitIdToDataSource = false;
             this.appointmentsTableAdapter.Adapter.RowUpdated += new SqlRowUpdatedEventHandler(appointmentsTableAdapter_RowUpdated);
             #endregion #CommitIdToDataSource
 
