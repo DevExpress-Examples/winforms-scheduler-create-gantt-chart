@@ -30,7 +30,7 @@
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.resourcesTree1 = new DevExpress.XtraScheduler.UI.ResourcesTree();
             this.schedulerControl1 = new DevExpress.XtraScheduler.SchedulerControl();
-            this.schedulerStorage1 = new DevExpress.XtraScheduler.SchedulerStorage(this.components);
+            this.schedulerStorage1 = new DevExpress.XtraScheduler.SchedulerDataStorage(this.components);
             this.taskDependenciesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gantTestDataSet = new GanttExample.GantTestDataSet();
             this.appointmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -203,7 +203,7 @@
 
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
         private DevExpress.XtraScheduler.SchedulerControl schedulerControl1;
-        private DevExpress.XtraScheduler.SchedulerStorage schedulerStorage1;
+        private DevExpress.XtraScheduler.SchedulerDataStorage schedulerStorage1;
         private GantTestDataSet gantTestDataSet;
         private System.Windows.Forms.BindingSource appointmentsBindingSource;
         private GantTestDataSetTableAdapters.AppointmentsTableAdapter appointmentsTableAdapter;
