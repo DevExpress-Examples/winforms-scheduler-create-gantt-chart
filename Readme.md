@@ -1,3 +1,9 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [Form1.cs](./CS/GanttStepByStep/Form1.cs) (VB: [Form1.vb](./VB/GanttStepByStep/Form1.vb))
+* [GantTest.sql](./CS/GanttStepByStep/GantTest.sql) (VB: [GantTest.sql](./VB/GanttStepByStep/GantTest.sql))
+<!-- default file list end -->
 # How to create Gantt chart using the Scheduler bound to MS SQL Server database
 
 
