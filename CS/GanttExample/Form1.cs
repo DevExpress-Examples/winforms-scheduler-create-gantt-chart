@@ -17,14 +17,14 @@ namespace GanttExample {
         public Form1() {
             InitializeComponent();
             #region #AppointmentEvents
-            schedulerStorage1.AppointmentsInserted += new PersistentObjectsEventHandler(schedulerStorage1_AppointmentsInserted);
-            schedulerStorage1.AppointmentsChanged += new PersistentObjectsEventHandler(schedulerStorage1_AppointmentsChanged);
-            schedulerStorage1.AppointmentsDeleted += new PersistentObjectsEventHandler(schedulerStorage1_AppointmentsDeleted);
+            schedulerDataStorage1.AppointmentsInserted += new PersistentObjectsEventHandler(schedulerDataStorage1_AppointmentsInserted);
+            schedulerDataStorage1.AppointmentsChanged += new PersistentObjectsEventHandler(schedulerDataStorage1_AppointmentsChanged);
+            schedulerDataStorage1.AppointmentsDeleted += new PersistentObjectsEventHandler(schedulerDataStorage1_AppointmentsDeleted);
             #endregion #AppointmentEvents
             #region #AppointmentDependencyEvents
-            schedulerStorage1.AppointmentDependenciesInserted += new PersistentObjectsEventHandler(schedulerStorage1_AppointmentDependenciesInserted);
-            schedulerStorage1.AppointmentDependenciesChanged += new PersistentObjectsEventHandler(schedulerStorage1_AppointmentDependenciesChanged);
-            schedulerStorage1.AppointmentDependenciesDeleted += new PersistentObjectsEventHandler(schedulerStorage1_AppointmentDependenciesDeleted);
+            schedulerDataStorage1.AppointmentDependenciesInserted += new PersistentObjectsEventHandler(schedulerDataStorage1_AppointmentDependenciesInserted);
+            schedulerDataStorage1.AppointmentDependenciesChanged += new PersistentObjectsEventHandler(schedulerDataStorage1_AppointmentDependenciesChanged);
+            schedulerDataStorage1.AppointmentDependenciesDeleted += new PersistentObjectsEventHandler(schedulerDataStorage1_AppointmentDependenciesDeleted);
             #endregion #AppointmentDependencyEvents
 
             //Fix the view type and splitter position.
@@ -44,11 +44,8 @@ namespace GanttExample {
             // TODO: This line of code loads data into the 'gantTestDataSet.Resources' table. You can move, or remove it, as needed.
             this.resourcesTableAdapter.Fill(this.gantTestDataSet.Resources);
             // TODO: This line of code loads data into the 'gantTestDataSet.Appointments' table. You can move, or remove it, as needed.
-            this.appointmentsTableAdapter.Fill(this.gantTestDataSet.Appointments);
-            #region #CommitIdToDataSource
-            schedulerStorage1.Appointments.CommitIdToDataSource = false;
-            this.appointmentsTableAdapter.Adapter.RowUpdated += new SqlRowUpdatedEventHandler(appointmentsTableAdapter_RowUpdated);
-            #endregion #CommitIdToDataSource
+            this.appointmentsTableAdapter.Fill(this.gantTestDataSet.Appointments);            
+            this.appointmentsTableAdapter.Adapter.RowUpdated += new SqlRowUpdatedEventHandler(appointmentsTableAdapter_RowUpdated);   
 
             #region #Adjustment
             schedulerControl1.ActiveViewType = SchedulerViewType.Gantt;
@@ -63,17 +60,17 @@ namespace GanttExample {
         }
 
         #region #Appointment
-        private void schedulerStorage1_AppointmentsChanged(object sender, PersistentObjectsEventArgs e) {
+        private void schedulerDataStorage1_AppointmentsChanged(object sender, PersistentObjectsEventArgs e) {
             CommitTask();
         }
 
-        private void schedulerStorage1_AppointmentsDeleted(object sender, PersistentObjectsEventArgs e) {
+        private void schedulerDataStorage1_AppointmentsDeleted(object sender, PersistentObjectsEventArgs e) {
             CommitTask();
         }
-        private void schedulerStorage1_AppointmentsInserted(object sender, PersistentObjectsEventArgs e) {
+        private void schedulerDataStorage1_AppointmentsInserted(object sender, PersistentObjectsEventArgs e) {
 
             CommitTask();
-            schedulerStorage1.SetAppointmentId(((Appointment)e.Objects[0]), id);
+            schedulerDataStorage1.SetAppointmentId(((Appointment)e.Objects[0]), id);
         }
         void CommitTask() {
 
@@ -83,15 +80,15 @@ namespace GanttExample {
         #endregion #Appointment
 
         #region #TaskDependencies
-        private void schedulerStorage1_AppointmentDependenciesChanged(object sender, PersistentObjectsEventArgs e) {
+        private void schedulerDataStorage1_AppointmentDependenciesChanged(object sender, PersistentObjectsEventArgs e) {
             CommitTaskDependency();
         }
 
-        private void schedulerStorage1_AppointmentDependenciesDeleted(object sender, PersistentObjectsEventArgs e) {
+        private void schedulerDataStorage1_AppointmentDependenciesDeleted(object sender, PersistentObjectsEventArgs e) {
             CommitTaskDependency();
         }
 
-        private void schedulerStorage1_AppointmentDependenciesInserted(object sender, PersistentObjectsEventArgs e) {
+        private void schedulerDataStorage1_AppointmentDependenciesInserted(object sender, PersistentObjectsEventArgs e) {
             CommitTaskDependency();
         }
         void CommitTaskDependency() {

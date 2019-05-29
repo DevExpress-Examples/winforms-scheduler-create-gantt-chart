@@ -30,7 +30,7 @@
             Me.splitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
             Me.resourcesTree1 = New DevExpress.XtraScheduler.UI.ResourcesTree()
             Me.schedulerControl1 = New DevExpress.XtraScheduler.SchedulerControl()
-            Me.schedulerStorage1 = New DevExpress.XtraScheduler.SchedulerStorage(Me.components)
+            Me.schedulerDataStorage1 = New DevExpress.XtraScheduler.SchedulerDataStorage(Me.components)
             Me.taskDependenciesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
             Me.gantTestDataSet = New GantTestDataSet()
             Me.appointmentsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -45,7 +45,7 @@
             Me.splitContainerControl1.SuspendLayout()
             CType(Me.resourcesTree1, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.schedulerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(Me.schedulerStorage1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.schedulerDataStorage1, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.taskDependenciesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.gantTestDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.appointmentsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -68,7 +68,7 @@
             ' 
             ' resourcesTree1
             ' 
-            Me.resourcesTree1.Columns.AddRange(New DevExpress.XtraTreeList.Columns.TreeListColumn() { Me.colIdSort, Me.colId, Me.colDescription})
+            Me.resourcesTree1.Columns.AddRange(New DevExpress.XtraTreeList.Columns.TreeListColumn() {Me.colIdSort, Me.colId, Me.colDescription})
             Me.resourcesTree1.Dock = System.Windows.Forms.DockStyle.Fill
             Me.resourcesTree1.Location = New System.Drawing.Point(0, 0)
             Me.resourcesTree1.Name = "resourcesTree1"
@@ -79,7 +79,7 @@
             ' 
             ' schedulerControl1
             ' 
-            Me.schedulerControl1.DataStorage = Me.schedulerStorage1
+            Me.schedulerControl1.DataStorage = Me.schedulerDataStorage1
             Me.schedulerControl1.Dock = System.Windows.Forms.DockStyle.Fill
             Me.schedulerControl1.Location = New System.Drawing.Point(0, 0)
             Me.schedulerControl1.Name = "schedulerControl1"
@@ -95,34 +95,34 @@
             ' 
             ' schedulerStorage1
             ' 
-            Me.schedulerStorage1.AppointmentDependencies.DataSource = Me.taskDependenciesBindingSource
-            Me.schedulerStorage1.AppointmentDependencies.Mappings.DependentId = "DependentId"
-            Me.schedulerStorage1.AppointmentDependencies.Mappings.ParentId = "ParentId"
-            Me.schedulerStorage1.AppointmentDependencies.Mappings.Type = "Type"
-            Me.schedulerStorage1.Appointments.DataSource = Me.appointmentsBindingSource
-            Me.schedulerStorage1.Appointments.Mappings.AllDay = "AllDay"
-            Me.schedulerStorage1.Appointments.Mappings.AppointmentId = "UniqueId"
-            Me.schedulerStorage1.Appointments.Mappings.Description = "Description"
-            Me.schedulerStorage1.Appointments.Mappings.End = "EndDate"
-            Me.schedulerStorage1.Appointments.Mappings.Label = "Label"
-            Me.schedulerStorage1.Appointments.Mappings.Location = "Location"
-            Me.schedulerStorage1.Appointments.Mappings.PercentComplete = "PercentComplete"
-            Me.schedulerStorage1.Appointments.Mappings.RecurrenceInfo = "RecurrenceInfo"
-            Me.schedulerStorage1.Appointments.Mappings.ReminderInfo = "ReminderInfo"
-            Me.schedulerStorage1.Appointments.Mappings.ResourceId = "ResourceId"
-            Me.schedulerStorage1.Appointments.Mappings.Start = "StartDate"
-            Me.schedulerStorage1.Appointments.Mappings.Status = "Status"
-            Me.schedulerStorage1.Appointments.Mappings.Subject = "Subject"
-            Me.schedulerStorage1.Appointments.Mappings.TimeZoneId = "TimeZoneId"
-            Me.schedulerStorage1.Appointments.Mappings.Type = "Type"
-            Me.schedulerStorage1.Resources.CustomFieldMappings.Add(New DevExpress.XtraScheduler.ResourceCustomFieldMapping("IdSort", "IdSort"))
-            Me.schedulerStorage1.Resources.CustomFieldMappings.Add(New DevExpress.XtraScheduler.ResourceCustomFieldMapping("CustomField1", "CustomField1"))
-            Me.schedulerStorage1.Resources.DataSource = Me.resourcesBindingSource
-            Me.schedulerStorage1.Resources.Mappings.Caption = "Description"
-            Me.schedulerStorage1.Resources.Mappings.Color = "Color"
-            Me.schedulerStorage1.Resources.Mappings.Id = "Id"
-            Me.schedulerStorage1.Resources.Mappings.Image = "Image"
-            Me.schedulerStorage1.Resources.Mappings.ParentId = "ParentId"
+            Me.schedulerDataStorage1.AppointmentDependencies.DataSource = Me.taskDependenciesBindingSource
+            Me.schedulerDataStorage1.AppointmentDependencies.Mappings.DependentId = "DependentId"
+            Me.schedulerDataStorage1.AppointmentDependencies.Mappings.ParentId = "ParentId"
+            Me.schedulerDataStorage1.AppointmentDependencies.Mappings.Type = "Type"
+            Me.schedulerDataStorage1.Appointments.DataSource = Me.appointmentsBindingSource
+            Me.schedulerDataStorage1.Appointments.Mappings.AllDay = "AllDay"
+            Me.schedulerDataStorage1.Appointments.Mappings.AppointmentId = "UniqueId"
+            Me.schedulerDataStorage1.Appointments.Mappings.Description = "Description"
+            Me.schedulerDataStorage1.Appointments.Mappings.End = "EndDate"
+            Me.schedulerDataStorage1.Appointments.Mappings.Label = "Label"
+            Me.schedulerDataStorage1.Appointments.Mappings.Location = "Location"
+            Me.schedulerDataStorage1.Appointments.Mappings.PercentComplete = "PercentComplete"
+            Me.schedulerDataStorage1.Appointments.Mappings.RecurrenceInfo = "RecurrenceInfo"
+            Me.schedulerDataStorage1.Appointments.Mappings.ReminderInfo = "ReminderInfo"
+            Me.schedulerDataStorage1.Appointments.Mappings.ResourceId = "ResourceId"
+            Me.schedulerDataStorage1.Appointments.Mappings.Start = "StartDate"
+            Me.schedulerDataStorage1.Appointments.Mappings.Status = "Status"
+            Me.schedulerDataStorage1.Appointments.Mappings.Subject = "Subject"
+            Me.schedulerDataStorage1.Appointments.Mappings.TimeZoneId = "TimeZoneId"
+            Me.schedulerDataStorage1.Appointments.Mappings.Type = "Type"
+            Me.schedulerDataStorage1.Resources.CustomFieldMappings.Add(New DevExpress.XtraScheduler.ResourceCustomFieldMapping("IdSort", "IdSort"))
+            Me.schedulerDataStorage1.Resources.CustomFieldMappings.Add(New DevExpress.XtraScheduler.ResourceCustomFieldMapping("CustomField1", "CustomField1"))
+            Me.schedulerDataStorage1.Resources.DataSource = Me.resourcesBindingSource
+            Me.schedulerDataStorage1.Resources.Mappings.Caption = "Description"
+            Me.schedulerDataStorage1.Resources.Mappings.Color = "Color"
+            Me.schedulerDataStorage1.Resources.Mappings.Id = "Id"
+            Me.schedulerDataStorage1.Resources.Mappings.Image = "Image"
+            Me.schedulerDataStorage1.Resources.Mappings.ParentId = "ParentId"
             ' 
             ' taskDependenciesBindingSource
             ' 
@@ -176,7 +176,7 @@
             ' 
             ' Form1
             ' 
-            Me.AutoScaleDimensions = New System.Drawing.SizeF(6F, 13F)
+            Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0F, 13.0F)
             Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
             Me.ClientSize = New System.Drawing.Size(700, 489)
             Me.Controls.Add(Me.splitContainerControl1)
@@ -186,7 +186,7 @@
             Me.splitContainerControl1.ResumeLayout(False)
             CType(Me.resourcesTree1, System.ComponentModel.ISupportInitialize).EndInit()
             CType(Me.schedulerControl1, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(Me.schedulerStorage1, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.schedulerDataStorage1, System.ComponentModel.ISupportInitialize).EndInit()
             CType(Me.taskDependenciesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
             CType(Me.gantTestDataSet, System.ComponentModel.ISupportInitialize).EndInit()
             CType(Me.appointmentsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -195,11 +195,11 @@
 
         End Sub
 
-        #End Region
+#End Region
 
         Private splitContainerControl1 As DevExpress.XtraEditors.SplitContainerControl
         Private schedulerControl1 As DevExpress.XtraScheduler.SchedulerControl
-        Private schedulerStorage1 As DevExpress.XtraScheduler.SchedulerStorage
+        Private schedulerDataStorage1 As DevExpress.XtraScheduler.SchedulerDataStorage
         Private gantTestDataSet As GantTestDataSet
         Private appointmentsBindingSource As System.Windows.Forms.BindingSource
         Private appointmentsTableAdapter As GantTestDataSetTableAdapters.AppointmentsTableAdapter
