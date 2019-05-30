@@ -18,23 +18,23 @@ Namespace GanttExample
 
         Public Sub New()
             InitializeComponent()
-'            #Region "#AppointmentEvents"
-            AddHandler schedulerStorage1.AppointmentsInserted, AddressOf schedulerStorage1_AppointmentsInserted
-            AddHandler schedulerStorage1.AppointmentsChanged, AddressOf schedulerStorage1_AppointmentsChanged
-            AddHandler schedulerStorage1.AppointmentsDeleted, AddressOf schedulerStorage1_AppointmentsDeleted
-'            #End Region ' #AppointmentEvents
-'            #Region "#AppointmentDependencyEvents"
-            AddHandler schedulerStorage1.AppointmentDependenciesInserted, AddressOf schedulerStorage1_AppointmentDependenciesInserted
-            AddHandler schedulerStorage1.AppointmentDependenciesChanged, AddressOf schedulerStorage1_AppointmentDependenciesChanged
-            AddHandler schedulerStorage1.AppointmentDependenciesDeleted, AddressOf schedulerStorage1_AppointmentDependenciesDeleted
-'            #End Region ' #AppointmentDependencyEvents
+            '            #Region "#AppointmentEvents"
+            AddHandler schedulerDataStorage1.AppointmentsInserted, AddressOf schedulerDataStorage1_AppointmentsInserted
+            AddHandler schedulerDataStorage1.AppointmentsChanged, AddressOf schedulerDataStorage1_AppointmentsChanged
+            AddHandler schedulerDataStorage1.AppointmentsDeleted, AddressOf schedulerDataStorage1_AppointmentsDeleted
+            '            #End Region ' #AppointmentEvents
+            '            #Region "#AppointmentDependencyEvents"
+            AddHandler schedulerDataStorage1.AppointmentDependenciesInserted, AddressOf schedulerDataStorage1_AppointmentDependenciesInserted
+            AddHandler schedulerDataStorage1.AppointmentDependenciesChanged, AddressOf schedulerDataStorage1_AppointmentDependenciesChanged
+            AddHandler schedulerDataStorage1.AppointmentDependenciesDeleted, AddressOf schedulerDataStorage1_AppointmentDependenciesDeleted
+            '            #End Region ' #AppointmentDependencyEvents
 
             'Fix the view type and splitter position.
             AddHandler schedulerControl1.ActiveViewChanged, AddressOf schedulerControl1_ActiveViewChanged
             AddHandler splitContainerControl1.SplitterPositionChanged, AddressOf splitContainerControl1_SplitterPositionChanged
 
             ' Set the date to show existing appointments from the database.
-            schedulerControl1.Start = New Date(2017, 6, 02)
+            schedulerControl1.Start = New Date(2017, 6, 2)
 
         End Sub
 
@@ -46,13 +46,11 @@ Namespace GanttExample
             ' TODO: This line of code loads data into the 'gantTestDataSet.Resources' table. You can move, or remove it, as needed.
             Me.resourcesTableAdapter.Fill(Me.gantTestDataSet.Resources)
             ' TODO: This line of code loads data into the 'gantTestDataSet.Appointments' table. You can move, or remove it, as needed.
-            Me.appointmentsTableAdapter.Fill(Me.gantTestDataSet.Appointments)
-'            #Region "#CommitIdToDataSource"
-            schedulerStorage1.Appointments.CommitIdToDataSource = False
-            AddHandler appointmentsTableAdapter.Adapter.RowUpdated, AddressOf appointmentsTableAdapter_RowUpdated
-'            #End Region ' #CommitIdToDataSource
+            Me.appointmentsTableAdapter.Fill(Me.gantTestDataSet.Appointments)           '           
 
-'            #Region "#Adjustment"
+            AddHandler appointmentsTableAdapter.Adapter.RowUpdated, AddressOf appointmentsTableAdapter_RowUpdated            '          
+
+            '            #Region "#Adjustment"
             schedulerControl1.ActiveViewType = SchedulerViewType.Gantt
             schedulerControl1.GroupType = SchedulerGroupType.Resource
             schedulerControl1.GanttView.CellsAutoHeightOptions.Enabled = True
@@ -61,39 +59,39 @@ Namespace GanttExample
             schedulerControl1.GanttView.NavigationButtonVisibility = NavigationButtonVisibility.Never
             ' Disable user sorting in the Resource Tree (clicking the column will not change the sort order).
             colDescription.OptionsColumn.AllowSort = False
-'            #End Region ' #Adjustment
+            '            #End Region ' #Adjustment
         End Sub
 
-        #Region "#Appointment"
-        Private Sub schedulerStorage1_AppointmentsChanged(ByVal sender As Object, ByVal e As PersistentObjectsEventArgs)
+#Region "#Appointment"
+        Private Sub schedulerDataStorage1_AppointmentsChanged(ByVal sender As Object, ByVal e As PersistentObjectsEventArgs)
             CommitTask()
         End Sub
 
-        Private Sub schedulerStorage1_AppointmentsDeleted(ByVal sender As Object, ByVal e As PersistentObjectsEventArgs)
+        Private Sub schedulerDataStorage1_AppointmentsDeleted(ByVal sender As Object, ByVal e As PersistentObjectsEventArgs)
             CommitTask()
         End Sub
-        Private Sub schedulerStorage1_AppointmentsInserted(ByVal sender As Object, ByVal e As PersistentObjectsEventArgs)
+        Private Sub schedulerDataStorage1_AppointmentsInserted(ByVal sender As Object, ByVal e As PersistentObjectsEventArgs)
 
             CommitTask()
-            schedulerStorage1.SetAppointmentId((CType(e.Objects(0), Appointment)), id)
+            schedulerDataStorage1.SetAppointmentId((CType(e.Objects(0), Appointment)), id)
         End Sub
         Private Sub CommitTask()
 
             appointmentsTableAdapter.Update(gantTestDataSet)
             Me.gantTestDataSet.AcceptChanges()
         End Sub
-        #End Region ' #Appointment
+#End Region ' #Appointment
 
-        #Region "#TaskDependencies"
-        Private Sub schedulerStorage1_AppointmentDependenciesChanged(ByVal sender As Object, ByVal e As PersistentObjectsEventArgs)
+#Region "#TaskDependencies"
+        Private Sub schedulerDataStorage1_AppointmentDependenciesChanged(ByVal sender As Object, ByVal e As PersistentObjectsEventArgs)
             CommitTaskDependency()
         End Sub
 
-        Private Sub schedulerStorage1_AppointmentDependenciesDeleted(ByVal sender As Object, ByVal e As PersistentObjectsEventArgs)
+        Private Sub schedulerDataStorage1_AppointmentDependenciesDeleted(ByVal sender As Object, ByVal e As PersistentObjectsEventArgs)
             CommitTaskDependency()
         End Sub
 
-        Private Sub schedulerStorage1_AppointmentDependenciesInserted(ByVal sender As Object, ByVal e As PersistentObjectsEventArgs)
+        Private Sub schedulerDataStorage1_AppointmentDependenciesInserted(ByVal sender As Object, ByVal e As PersistentObjectsEventArgs)
             CommitTaskDependency()
         End Sub
         Private Sub CommitTaskDependency()

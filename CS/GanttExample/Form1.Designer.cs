@@ -30,7 +30,7 @@
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.resourcesTree1 = new DevExpress.XtraScheduler.UI.ResourcesTree();
             this.schedulerControl1 = new DevExpress.XtraScheduler.SchedulerControl();
-            this.schedulerStorage1 = new DevExpress.XtraScheduler.SchedulerStorage(this.components);
+            this.schedulerDataStorage1 = new DevExpress.XtraScheduler.SchedulerDataStorage(this.components);
             this.taskDependenciesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gantTestDataSet = new GanttExample.GantTestDataSet();
             this.appointmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -45,7 +45,7 @@
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resourcesTree1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.schedulerStorage1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schedulerDataStorage1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taskDependenciesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gantTestDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentsBindingSource)).BeginInit();
@@ -82,7 +82,7 @@
             // 
             // schedulerControl1
             // 
-            this.schedulerControl1.DataStorage = this.schedulerStorage1;
+            this.schedulerControl1.DataStorage = this.schedulerDataStorage1;
             this.schedulerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.schedulerControl1.Location = new System.Drawing.Point(0, 0);
             this.schedulerControl1.Name = "schedulerControl1";
@@ -98,34 +98,34 @@
             // 
             // schedulerStorage1
             // 
-            this.schedulerStorage1.AppointmentDependencies.DataSource = this.taskDependenciesBindingSource;
-            this.schedulerStorage1.AppointmentDependencies.Mappings.DependentId = "DependentId";
-            this.schedulerStorage1.AppointmentDependencies.Mappings.ParentId = "ParentId";
-            this.schedulerStorage1.AppointmentDependencies.Mappings.Type = "Type";
-            this.schedulerStorage1.Appointments.DataSource = this.appointmentsBindingSource;
-            this.schedulerStorage1.Appointments.Mappings.AllDay = "AllDay";
-            this.schedulerStorage1.Appointments.Mappings.AppointmentId = "UniqueId";
-            this.schedulerStorage1.Appointments.Mappings.Description = "Description";
-            this.schedulerStorage1.Appointments.Mappings.End = "EndDate";
-            this.schedulerStorage1.Appointments.Mappings.Label = "Label";
-            this.schedulerStorage1.Appointments.Mappings.Location = "Location";
-            this.schedulerStorage1.Appointments.Mappings.PercentComplete = "PercentComplete";
-            this.schedulerStorage1.Appointments.Mappings.RecurrenceInfo = "RecurrenceInfo";
-            this.schedulerStorage1.Appointments.Mappings.ReminderInfo = "ReminderInfo";
-            this.schedulerStorage1.Appointments.Mappings.ResourceId = "ResourceId";
-            this.schedulerStorage1.Appointments.Mappings.Start = "StartDate";
-            this.schedulerStorage1.Appointments.Mappings.Status = "Status";
-            this.schedulerStorage1.Appointments.Mappings.Subject = "Subject";
-            this.schedulerStorage1.Appointments.Mappings.TimeZoneId = "TimeZoneId";
-            this.schedulerStorage1.Appointments.Mappings.Type = "Type";
-            this.schedulerStorage1.Resources.CustomFieldMappings.Add(new DevExpress.XtraScheduler.ResourceCustomFieldMapping("IdSort", "IdSort"));
-            this.schedulerStorage1.Resources.CustomFieldMappings.Add(new DevExpress.XtraScheduler.ResourceCustomFieldMapping("CustomField1", "CustomField1"));
-            this.schedulerStorage1.Resources.DataSource = this.resourcesBindingSource;
-            this.schedulerStorage1.Resources.Mappings.Caption = "Description";
-            this.schedulerStorage1.Resources.Mappings.Color = "Color";
-            this.schedulerStorage1.Resources.Mappings.Id = "Id";
-            this.schedulerStorage1.Resources.Mappings.Image = "Image";
-            this.schedulerStorage1.Resources.Mappings.ParentId = "ParentId";
+            this.schedulerDataStorage1.AppointmentDependencies.DataSource = this.taskDependenciesBindingSource;
+            this.schedulerDataStorage1.AppointmentDependencies.Mappings.DependentId = "DependentId";
+            this.schedulerDataStorage1.AppointmentDependencies.Mappings.ParentId = "ParentId";
+            this.schedulerDataStorage1.AppointmentDependencies.Mappings.Type = "Type";
+            this.schedulerDataStorage1.Appointments.DataSource = this.appointmentsBindingSource;
+            this.schedulerDataStorage1.Appointments.Mappings.AllDay = "AllDay";
+            this.schedulerDataStorage1.Appointments.Mappings.AppointmentId = "UniqueId";
+            this.schedulerDataStorage1.Appointments.Mappings.Description = "Description";
+            this.schedulerDataStorage1.Appointments.Mappings.End = "EndDate";
+            this.schedulerDataStorage1.Appointments.Mappings.Label = "Label";
+            this.schedulerDataStorage1.Appointments.Mappings.Location = "Location";
+            this.schedulerDataStorage1.Appointments.Mappings.PercentComplete = "PercentComplete";
+            this.schedulerDataStorage1.Appointments.Mappings.RecurrenceInfo = "RecurrenceInfo";
+            this.schedulerDataStorage1.Appointments.Mappings.ReminderInfo = "ReminderInfo";
+            this.schedulerDataStorage1.Appointments.Mappings.ResourceId = "ResourceId";
+            this.schedulerDataStorage1.Appointments.Mappings.Start = "StartDate";
+            this.schedulerDataStorage1.Appointments.Mappings.Status = "Status";
+            this.schedulerDataStorage1.Appointments.Mappings.Subject = "Subject";
+            this.schedulerDataStorage1.Appointments.Mappings.TimeZoneId = "TimeZoneId";
+            this.schedulerDataStorage1.Appointments.Mappings.Type = "Type";
+            this.schedulerDataStorage1.Resources.CustomFieldMappings.Add(new DevExpress.XtraScheduler.ResourceCustomFieldMapping("IdSort", "IdSort"));
+            this.schedulerDataStorage1.Resources.CustomFieldMappings.Add(new DevExpress.XtraScheduler.ResourceCustomFieldMapping("CustomField1", "CustomField1"));
+            this.schedulerDataStorage1.Resources.DataSource = this.resourcesBindingSource;
+            this.schedulerDataStorage1.Resources.Mappings.Caption = "Description";
+            this.schedulerDataStorage1.Resources.Mappings.Color = "Color";
+            this.schedulerDataStorage1.Resources.Mappings.Id = "Id";
+            this.schedulerDataStorage1.Resources.Mappings.Image = "Image";
+            this.schedulerDataStorage1.Resources.Mappings.ParentId = "ParentId";
             // 
             // taskDependenciesBindingSource
             // 
@@ -190,7 +190,7 @@
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.resourcesTree1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.schedulerStorage1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schedulerDataStorage1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.taskDependenciesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gantTestDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentsBindingSource)).EndInit();
@@ -203,7 +203,7 @@
 
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
         private DevExpress.XtraScheduler.SchedulerControl schedulerControl1;
-        private DevExpress.XtraScheduler.SchedulerStorage schedulerStorage1;
+        private DevExpress.XtraScheduler.SchedulerDataStorage schedulerDataStorage1;
         private GantTestDataSet gantTestDataSet;
         private System.Windows.Forms.BindingSource appointmentsBindingSource;
         private GantTestDataSetTableAdapters.AppointmentsTableAdapter appointmentsTableAdapter;
