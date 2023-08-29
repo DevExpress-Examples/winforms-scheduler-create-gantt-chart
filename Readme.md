@@ -5,6 +5,10 @@
 <!-- default badges end -->
 # WinForms Scheduler - Create Gantt Chart bound to MS SQL Server database
 
+> **Important**
+>
+> You can also use the [Winforms Gantt Control](https://docs.devexpress.com/WindowsForms/401173/controls-and-libraries/gantt-control/gantt-control) to quickly incorporate project planning and task scheduling functionality in your Windows Forms application.
+
 This example demonstrates how to customize the WinForms Scheduler control to present data in a [Gantt View](https://docs.devexpress.com/WindowsForms/10698/controls-and-libraries/scheduler/views/gantt-view).
 
 The [ResourcesTree Control](https://docs.devexpress.com/WindowsForms/10685/controls-and-libraries/scheduler/visual-elements/resources-tree) is used to display a hierarchy of resources. The [SplitContainer Control](https://docs.devexpress.com/WindowsForms/DevExpress.XtraEditors.SplitContainerControl) is used to allow users to resize the Gantt Chart (Scheduler) and ResourceTree.
