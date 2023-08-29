@@ -1,5 +1,7 @@
-﻿Namespace GanttStepByStep
-    Partial Public Class Form1
+Namespace GanttStepByStep
+
+    Partial Class Form1
+
         ''' <summary>
         ''' Required designer variable.
         ''' </summary>
@@ -10,22 +12,22 @@
         ''' </summary>
         ''' <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-            If disposing AndAlso (components IsNot Nothing) Then
-                components.Dispose()
+            If disposing AndAlso (Me.components IsNot Nothing) Then
+                Me.components.Dispose()
             End If
+
             MyBase.Dispose(disposing)
         End Sub
 
-        #Region "Windows Form Designer generated code"
-
+'#Region "Windows Form Designer generated code"
         ''' <summary>
         ''' Required method for Designer support - do not modify
         ''' the contents of this method with the code editor.
         ''' </summary>
         Private Sub InitializeComponent()
             Me.components = New System.ComponentModel.Container()
-            Dim timeRuler1 As New DevExpress.XtraScheduler.TimeRuler()
-            Dim timeRuler2 As New DevExpress.XtraScheduler.TimeRuler()
+            Dim timeRuler1 As DevExpress.XtraScheduler.TimeRuler = New DevExpress.XtraScheduler.TimeRuler()
+            Dim timeRuler2 As DevExpress.XtraScheduler.TimeRuler = New DevExpress.XtraScheduler.TimeRuler()
             Me.schedulerStorage1 = New DevExpress.XtraScheduler.SchedulerStorage(Me.components)
             Me.taskDependenciesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
             Me.gantTestDataSet = New GanttStepByStep.GantTestDataSet()
@@ -39,15 +41,15 @@
             Me.appointmentsTableAdapter = New GanttStepByStep.GantTestDataSetTableAdapters.AppointmentsTableAdapter()
             Me.resourcesTableAdapter = New GanttStepByStep.GantTestDataSetTableAdapters.ResourcesTableAdapter()
             Me.taskDependenciesTableAdapter = New GanttStepByStep.GantTestDataSetTableAdapters.TaskDependenciesTableAdapter()
-            DirectCast(Me.schedulerStorage1, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.taskDependenciesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.gantTestDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.appointmentsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.resourcesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.splitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.schedulerStorage1), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.taskDependenciesBindingSource), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.gantTestDataSet), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.appointmentsBindingSource), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.resourcesBindingSource), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.splitContainerControl1), System.ComponentModel.ISupportInitialize).BeginInit()
             Me.splitContainerControl1.SuspendLayout()
-            DirectCast(Me.resourcesTree1, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.schedulerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.resourcesTree1), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.schedulerControl1), System.ComponentModel.ISupportInitialize).BeginInit()
             Me.SuspendLayout()
             ' 
             ' schedulerStorage1
@@ -60,7 +62,7 @@
             Me.schedulerStorage1.Appointments.Mappings.AllDay = "AllDay"
             Me.schedulerStorage1.Appointments.Mappings.AppointmentId = "UniqueId"
             Me.schedulerStorage1.Appointments.Mappings.Description = "Description"
-            Me.schedulerStorage1.Appointments.Mappings.End = "EndDate"
+            Me.schedulerStorage1.Appointments.Mappings.[End] = "EndDate"
             Me.schedulerStorage1.Appointments.Mappings.Label = "Label"
             Me.schedulerStorage1.Appointments.Mappings.Location = "Location"
             Me.schedulerStorage1.Appointments.Mappings.PercentComplete = "PercentComplete"
@@ -116,7 +118,7 @@
             ' 
             ' resourcesTree1
             ' 
-            Me.resourcesTree1.Columns.AddRange(New DevExpress.XtraTreeList.Columns.TreeListColumn() { Me.colId, Me.colDescription})
+            Me.resourcesTree1.Columns.AddRange(New DevExpress.XtraTreeList.Columns.TreeListColumn() {Me.colId, Me.colDescription})
             Me.resourcesTree1.Dock = System.Windows.Forms.DockStyle.Fill
             Me.resourcesTree1.Location = New System.Drawing.Point(0, 0)
             Me.resourcesTree1.Name = "resourcesTree1"
@@ -144,7 +146,7 @@
             Me.schedulerControl1.Location = New System.Drawing.Point(0, 0)
             Me.schedulerControl1.Name = "schedulerControl1"
             Me.schedulerControl1.Size = New System.Drawing.Size(493, 450)
-            Me.schedulerControl1.Start = New Date(2016, 11, 8, 0, 0, 0, 0)
+            Me.schedulerControl1.Start = New System.DateTime(2016, 11, 8, 0, 0, 0, 0)
             Me.schedulerControl1.TabIndex = 0
             Me.schedulerControl1.Text = "schedulerControl1"
             Me.schedulerControl1.Views.DayView.TimeRulers.Add(timeRuler1)
@@ -172,37 +174,44 @@
             Me.Controls.Add(Me.splitContainerControl1)
             Me.Name = "Form1"
             Me.Text = "Form1"
-            DirectCast(Me.schedulerStorage1, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.taskDependenciesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.gantTestDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.appointmentsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.resourcesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.splitContainerControl1, System.ComponentModel.ISupportInitialize).EndInit()
+            AddHandler Me.Load, New System.EventHandler(AddressOf Me.Form1_Load)
+            CType((Me.schedulerStorage1), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.taskDependenciesBindingSource), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.gantTestDataSet), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.appointmentsBindingSource), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.resourcesBindingSource), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.splitContainerControl1), System.ComponentModel.ISupportInitialize).EndInit()
             Me.splitContainerControl1.ResumeLayout(False)
-            DirectCast(Me.resourcesTree1, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.schedulerControl1, System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.resourcesTree1), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.schedulerControl1), System.ComponentModel.ISupportInitialize).EndInit()
             Me.ResumeLayout(False)
-
         End Sub
 
-        #End Region
-
+'#End Region
         Private schedulerStorage1 As DevExpress.XtraScheduler.SchedulerStorage
+
         Private splitContainerControl1 As DevExpress.XtraEditors.SplitContainerControl
+
         Private resourcesTree1 As DevExpress.XtraScheduler.UI.ResourcesTree
+
         Private colId As DevExpress.XtraScheduler.Native.ResourceTreeColumn
+
         Private colDescription As DevExpress.XtraScheduler.Native.ResourceTreeColumn
+
         Private schedulerControl1 As DevExpress.XtraScheduler.SchedulerControl
-        Private gantTestDataSet As GantTestDataSet
+
+        Private gantTestDataSet As GanttStepByStep.GantTestDataSet
+
         Private appointmentsBindingSource As System.Windows.Forms.BindingSource
-        Private appointmentsTableAdapter As GantTestDataSetTableAdapters.AppointmentsTableAdapter
+
+        Private appointmentsTableAdapter As GanttStepByStep.GantTestDataSetTableAdapters.AppointmentsTableAdapter
+
         Private resourcesBindingSource As System.Windows.Forms.BindingSource
-        Private resourcesTableAdapter As GantTestDataSetTableAdapters.ResourcesTableAdapter
+
+        Private resourcesTableAdapter As GanttStepByStep.GantTestDataSetTableAdapters.ResourcesTableAdapter
+
         Private taskDependenciesBindingSource As System.Windows.Forms.BindingSource
-        Private taskDependenciesTableAdapter As GantTestDataSetTableAdapters.TaskDependenciesTableAdapter
 
-
-
+        Private taskDependenciesTableAdapter As GanttStepByStep.GantTestDataSetTableAdapters.TaskDependenciesTableAdapter
     End Class
 End Namespace
-
