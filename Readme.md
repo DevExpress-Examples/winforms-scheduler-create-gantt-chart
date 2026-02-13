@@ -18,7 +18,7 @@ Read the following help topic for step-by-step instructions: [How to: Create a G
 
 ![WinForms Scheduler - Create Gantt Chart](https://raw.githubusercontent.com/DevExpress-Examples/how-to-create-gantt-chart-using-the-scheduler-bound-to-ms-sql-server-database-e3574/17.1.3+/media/35cef863-5b49-11e7-80c0-00155d624807.png)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=winforms-scheduler-create-gantt-chart&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=winforms-scheduler-create-gantt-chart&~~~was_helpful=no)
 
