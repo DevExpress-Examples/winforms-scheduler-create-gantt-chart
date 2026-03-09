@@ -16,7 +16,7 @@ The [ResourcesTree Control](https://docs.devexpress.com/WindowsForms/10685/contr
 
 Read the following help topic for step-by-step instructions: [How to: Create a Gantt Chart Application](https://docs.devexpress.com/WindowsForms/10699/controls-and-libraries/scheduler/examples/gantt-view/how-to-create-a-gantt-chart-application)
 
-![WinForms Scheduler - Create Gantt Chart](https://raw.githubusercontent.com/DevExpress-Examples/how-to-create-gantt-chart-using-the-scheduler-bound-to-ms-sql-server-database-e3574/17.1.3+/media/35cef863-5b49-11e7-80c0-00155d624807.png)
+![WinForms Scheduler - Create Gantt Chart](media/35cef863-5b49-11e7-80c0-00155d624807.png)
 <!-- feedback -->
 ## Does This Example Address Your Development Requirements/Objectives?
 
@@ -24,3 +24,4 @@ Read the following help topic for step-by-step instructions: [How to: Create a G
 
 (you will be redirected to DevExpress.com to submit your response)
 <!-- feedback end -->
+
